@@ -143,7 +143,7 @@ public class SessionController implements Initializable {
     public ObservableList<Session> getSession(){
         ObservableList<Session> sessionList = FXCollections.observableArrayList();
         ConnectDB conn = new ConnectDB();
-		conn.Connect("jdbc:mysql://localhost/bdgestionformations","root", "");
+        conn.Connect("jdbc:mysql://localhost/bdgestionformations?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC","root", "");
         String sql="SELECT * FROM session";
         Statement st;
         ResultSet rs;

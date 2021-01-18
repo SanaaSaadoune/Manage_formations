@@ -139,7 +139,7 @@ public class FormationController implements Initializable {
     public ObservableList<Formation> getFormation(){
         ObservableList<Formation> formList = FXCollections.observableArrayList();
         ConnectDB conn = new ConnectDB();
-    	conn.Connect("jdbc:mysql://localhost/bdgestionformations","root", "");
+        conn.Connect("jdbc:mysql://localhost/bdgestionformations?zeroDateTimeBehavior=CONVERT_TO_NULL&serverTimezone=UTC","root", "");
         String sql="SELECT * FROM formation";
         Statement st;
         ResultSet rs;
